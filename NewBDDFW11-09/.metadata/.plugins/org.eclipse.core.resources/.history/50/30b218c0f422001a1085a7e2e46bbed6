@@ -1,0 +1,12 @@
+package com.learnautomation.utility;
+
+import java.io.File;
+
+public class ExcelDataProvider {
+	
+	public ExcelDataProvider()
+	{
+		File scr=new File("./TestData/Data.xlsx");
+	}
+
+}

@@ -1,0 +1,40 @@
+package com.learnautomation.testcases;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.learnautomation.pages.LoginPage;
+import com.learnautomation.utility.BrowserFactory;
+
+public class LoginTestCRM {
+	WebDriver driver;
+	
+	
+	@BeforeClass
+	public void setup()
+	{
+		driver=BrowserFactory.StartApplication(driver, "Chrome", "https://www.crmpro.com/index.html");
+	}
+	
+	
+	
+	@Test
+	public void loginApp()
+	{
+		
+		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+		
+		loginPage.loginToCRM("ahsankarwar", "Test@123");
+		
+	}
+	
+	@AfterClass
+	public void teardown()
+	{
+		BrowserFactory.quitBrowser(driver); //Abstraction: showing essential features and hiding background details
+	}
+
+}

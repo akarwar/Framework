@@ -1,0 +1,28 @@
+package runner;
+
+
+
+import org.junit.runner.RunWith;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		features = "C:\\Users\\ahsan\\Documents\\New Eclipse Workspace\\NewBDDFW11-09\\freeCRMBDDFramework\\src\\main\\java\\Features\\Deals.feature"
+		,glue= {"stepdef"},	//name or pad of stepdefinition
+		plugin= {"pretty", "html:test-output","json:json_output/cucumber.json", "junit:junit_xml/cucumber.xml"},//report types
+		dryRun = false, // will check the mapping between feature File and Step Difination file
+		monochrome = true, // Display the consoul in readable format
+		strict = true//will execution and will notify the undefine step
+//		tags = {"@SmokeTest" , "~@Regression" , "~@EndToEnd"}
+		)
+
+		//{"@SmokeTest , @Regression"} Or : Tags
+		//{"@SmokeTest" , "@Regression"} And : Tags
+		//{"~@SmokeTest , @Regression"} Or : Tags to skip Smoke test (~) can be use before and tag name for iqnoring the tag from execution
+
+public class TestRunner {
+
+}

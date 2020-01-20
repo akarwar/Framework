@@ -1,0 +1,18 @@
+package com.learnautomation.testcases;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import com.learnautomation.utility.BrowserFactory;
+
+public class LoginTestCRM {
+	WebDriver driver;
+	
+	@Test
+	public void loginApp()
+	{
+		driver=BrowserFactory.StartApplication(driver, "Chrome", "https://www.crmpro.com/index.html");
+		System.out.println(driver.getTitle());
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.learnautomation.testcases;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.learnautomation.pages.LoginPage;
+import com.learnautomation.utility.BrowserFactory;
+
+public class LoginTestCRM {
+	WebDriver driver;
+	
+	@Test
+	public void loginApp()
+	{
+		driver=BrowserFactory.StartApplication(driver, "Chrome", "https://www.crmpro.com/index.html");
+		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+		loginPage.loginToCRM("ahsankarwar", "Test@123");
+		BrowserFactory.quitBrowser(driver); //Abstraction: showing essential features and hiding background details
+	}
+
+}
